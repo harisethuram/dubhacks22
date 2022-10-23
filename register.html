@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/register/" method="post">
+        <label for="name">Name:</label>
+        <input id="name" type="text" name="name" placeholder="Enter name">
+        <br>
+        <br>
+        <label for="email" id="">Email address:</label>
+        <input id="email" type="text" name="email" placeholder="Enter email">
+        <label for="password">Password:</label>
+        <input id="password" type="password" name="password" placeholder="****">
+
+        <br>
+        <br>
+        <input type="checkbox" id="food" name="food">
+        <label for="food"> I can cook!</label><br>
+        <input type="checkbox" id="money" name="money">
+        <label for="money"> I can donate!</label><br>
+        <input type="checkbox" id="job" name="job">
+        <label for="job"> I can teach career-skills!</label><br>
+        <br>
+        <label for="distance">How far are you willing to travel (miles)?</label>
+        <select id="distance" name="distance">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30+</option>
+        </select><br>
+        <label for="address">What is your address of residence?</label>
+        <input id="address" type="text" name="address" placeholder="Enter address"><br>
+        <button type="submit">Register</button>
+    </form>
+    <a href="{% url 'login' %}">Have an account?</a>
+
+</body>
+</html>

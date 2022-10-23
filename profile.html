@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    Hello {{ name }}!
+    Your current interests:
+    <ul>
+        {% for skill in skills %}
+        <li> {{skill}} </li>
+        {% endfor %}
+    </ul>
+    <br>
+    Update skills:
+    <form action="/profile/" method="post">
+        <input type="checkbox" id="food" name="food">
+        <label for="food"> I can cook!</label><br>
+        <input type="checkbox" id="money" name="money">
+        <label for="money"> I can donate!</label><br>
+        <input type="checkbox" id="job" name="job">
+        <label for="job"> I can teach career-skills!</label><br>
+        <br>
+        <button type="submit">Update</button>
+    </form>
+    <form action='/orgProfile/' method="post" id = "request">
+    <table border="5px">
+        <tr>
+            <th>Organization</th>
+            <th>Match</th>
+            <th>Select for approval</th>
+        </tr>
+        {% for match in matches %}
+        <tr>
+
+            {% for key, value in match.items %}
+                {% if key != "id" %}
+                    <td>{{ value }}</td>
+                {% endif %}
+                {% if key == 'id' %}
+                    <input id="value" type="radio" name="{{value}}">
+                {% endif %}
+            {% endfor %}
+
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <button type="submit" id="submit">Submit for approval</button>
+    </form>
+</body>
+</html>
